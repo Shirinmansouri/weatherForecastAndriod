@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667750975480",
+    "project_id": "weatherforecast-5398c",
+    "storage_bucket": "weatherforecast-5398c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667750975480:android:0e8571948bfd05e652b80d",
+        "android_client_info": {
+          "package_name": "com.ms.forecastweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667750975480-jt8uqb47kfkcrn6pamj77pl88dv9p8ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPW0hINSqcp3p8-TuEt7NFPdvTJdti3zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667750975480-jt8uqb47kfkcrn6pamj77pl88dv9p8ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
