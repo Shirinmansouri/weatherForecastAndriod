@@ -120,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this, "History Clicked", Toast.LENGTH_SHORT).show();
-
+                    Intent myIntent = new Intent(MainActivity.this, SearchHistoryActivity.class);
+                    MainActivity.this.startActivity(myIntent);
                 }
             });
          searchIv.setOnClickListener(new View.OnClickListener() {
