@@ -1,79 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     tools:context=".BluetoothActivity">
 
-    <!-- Display whether bluetooth is available or not -->
-    <TextView
-        android:id="@+id/statusBluetoothTV"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="#000"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <!-- Display whether bluetooth is available or not -->
+        <TextView
+            android:id="@+id/statusBluetoothTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000"
+            />
 
-    <!-- Bluetooth icon on/off -->
-    <ImageView
-        android:id="@+id/bluetoothTV"
-        android:layout_width="200dp"
-        android:layout_height="200dp" />
+        <!-- Bluetooth icon on/off -->
+        <ImageView
+            android:id="@+id/bluetoothTV"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
 
-    <!-- On Button -->
-    <Button
-        android:id="@+id/onBtn"
-        android:minWidth="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Turn On"
-        style="@style/Base.CardView"
-        />
+        <!-- On Button -->
+        <Button
+            android:id="@+id/onBtn"
+            android:minWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn On"
+            style="@style/Base.CardView"
+            />
 
-    <!-- Off Button -->
-    <Button
-        android:id="@+id/offBtn"
-        android:minWidth="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Turn Off"
-        style="@style/Base.CardView"
-        />
+        <!-- Off Button -->
+        <Button
+            android:id="@+id/offBtn"
+            android:minWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn Off"
+            style="@style/Base.CardView"
+            />
 
-    <!-- Discoverable Button -->
-    <Button
-        android:id="@+id/discoverableBtn"
-        android:minWidth="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discoverable"
-        style="@style/Base.CardView"
-        />
+        <!-- Discoverable Button -->
+        <Button
+            android:id="@+id/discoverableBtn"
+            android:minWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discoverable"
+            style="@style/Base.CardView"
+            />
 
-    <!-- Get list of paired devices button -->
-    <Button
-        android:id="@+id/pairedBtn"
-        android:minWidth="200dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Paired Devices"
-        style="@style/Base.CardView"
-        />
+        <!-- Get list of paired devices button -->
+        <Button
+            android:id="@+id/pairedBtn"
+            android:minWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Paired Devices"
+            style="@style/Base.CardView"
+            />
 
-    <!-- Show paired devices here -->
-    <TextView
-        android:id="@+id/pairedTv"
-        android:minWidth="200dp"
-        android:text=""
-        android:textColor="#000"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        <!-- Show paired devices here -->
+        <TextView
+            android:id="@+id/pairedTv"
+            android:minWidth="200dp"
+            android:text=""
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -86,4 +91,4 @@
         android:layout_alignParentBottom="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>
