@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,12 +41,16 @@ public class ListViewAdapter extends ArrayAdapter<WeatherModel> {
 
         TextView tvCity=(TextView) convertView.findViewById(R.id.IdTvSearchCityName);
         TextView tvDate=(TextView) convertView.findViewById(R.id.IdTvSearchDate);
+
+
         TextView tvTime=(TextView) convertView.findViewById(R.id.IdTvSearchTime);
         TextView tvTemperature=(TextView) convertView.findViewById(R.id.IdTvSearchTemperature);
         TextView tvWind=(TextView) convertView.findViewById(R.id.IdTvSearchWindSpeed);
         tvCity.setText(cityName);
-        tvDate.setText(searchDate);
-        tvTime.setText(searchTime);
+        DateFormat _date = new SimpleDateFormat("MM/dd/yy");
+        String strDate = _date. format(Date.parse(searchDate));
+        tvDate.setText(strDate);
+        tvTime.setText(searchTime.substring(11,16));
         tvTemperature.setText(searchTemperature);
         tvWind.setText(searchWindSpeed);
         return  convertView;
