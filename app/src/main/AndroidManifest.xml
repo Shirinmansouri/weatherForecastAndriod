@@ -22,6 +22,9 @@
         android:theme="@style/Theme.ForecastWeather"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".BusinessDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".BottomTabBarActivity"
             android:exported="false" />
         <activity

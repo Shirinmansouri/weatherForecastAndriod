@@ -12,15 +12,19 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class BluetoothActivity extends AppCompatActivity {
@@ -32,8 +36,10 @@ public class BluetoothActivity extends AppCompatActivity {
     ImageView mBlueTv;
     Button mOnBtn, mOffBtn, mDiscoveredBtn, mPairedBtn;
     Switch bluetoothStatus;
+    ListView businessesList;
 
     BluetoothAdapter mBlueAdapter;
+    ArrayAdapter businessesArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,7 @@ public class BluetoothActivity extends AppCompatActivity {
 
         // Set Home Selected
         bottomNavigationView.setSelectedItemId(R.id.explore);
+
 
         // Perform Item selectionListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -104,7 +111,7 @@ public class BluetoothActivity extends AppCompatActivity {
 
 
 //        mStatusBlueTv = findViewById(R.id.statusBluetoothTV);
-        mPairedTv = findViewById(R.id.pairedTv);
+//        mPairedTv = findViewById(R.id.pairedTv);
 //        mBlueTv = findViewById(R.id.bluetoothTV);
 //        mOnBtn = findViewById(R.id.onBtn);
 //        mOffBtn = findViewById(R.id.offBtn);
@@ -113,6 +120,34 @@ public class BluetoothActivity extends AppCompatActivity {
 
         // adapter
         mBlueAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        businessesList = findViewById(R.id.businessesList);
+
+        ArrayList<String> businessesArrayList = new ArrayList<>();
+
+        //                    ArrayAdapter businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
+        businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
+
+        businessesArrayAdapter.notifyDataSetChanged();
+
+        businessesList.setAdapter(businessesArrayAdapter);
+
+        Intent intent = new Intent(this, BusinessDetailsActivity.class);
+
+        businessesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                            intent.putExtra("mapType", mapType);
+//                            intent.putExtra("Location", restaurants.get(i) + "," + lonLats.get(i));
+//                businessesArrayAdapter.notifyDataSetChanged();
+                if (businessesArrayList.get(i).equals("2B:8C:1F:2A:0B:A9")){
+                    startActivity(intent);
+                }
+
+            }
+        });
+
 
 //        // check if bluetooth is available
 //        if (mBlueAdapter == null){
@@ -173,12 +208,14 @@ public class BluetoothActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mBlueAdapter.isEnabled()){
-                    mPairedTv.setText("Paired Devices");
+//                    mPairedTv.setText("Paired Devices");
                     Set<BluetoothDevice> devices = mBlueAdapter.getBondedDevices();
                     // Each attributes of Bluetooth device can be call using device. (like: device.getName()).
                     for (BluetoothDevice device: devices){
-                        mPairedTv.append("\nDevice" + device.getName() + "," + device);
+//                        mPairedTv.append("\nDevice" + device.getName() + "," + device.getAddress());
+                        businessesArrayList.add(device.getAddress());
                     }
+                    businessesArrayAdapter.notifyDataSetChanged();
                 }
                 else {
                     // bluetooth is off so can not get paired devices
@@ -186,7 +223,6 @@ public class BluetoothActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     @Override
