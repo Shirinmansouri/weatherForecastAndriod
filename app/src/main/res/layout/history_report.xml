@@ -53,11 +53,11 @@
         android:layout_width="50dp"
         android:layout_height="70dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="20sp"
+        android:layout_marginLeft="5sp"
         android:layout_marginBottom="2sp"
         android:layout_toRightOf="@+id/IdTvSearchTemperature"
         android:textAlignment="center"
-        android:textSize="10dp"
+        android:textSize="15dp"
         android:textStyle="bold" />
 
 
