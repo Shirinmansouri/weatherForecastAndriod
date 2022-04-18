@@ -17,5 +17,9 @@
         android:id="@+id/setting"
         android:title="Setting"
         android:icon="@drawable/ic_baseline_settings" />
+    <item
+        android:id="@+id/History"
+        android:title="History"
+        android:icon="@drawable/ic_history" />
 
 </menu>
