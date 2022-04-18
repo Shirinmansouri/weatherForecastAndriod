@@ -85,6 +85,10 @@ public class BluetoothActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.History:
+                        startActivity(new Intent(getApplicationContext(), SearchHistoryActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

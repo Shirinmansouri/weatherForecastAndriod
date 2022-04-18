@@ -137,31 +137,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/IdRvWeather"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="80dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
         </androidx.recyclerview.widget.RecyclerView>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/IdFabHistory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_history"
-            app:fabSize="mini"
-            app:backgroundTint="@color/white"/>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/IdFabBluetooth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|left"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/ic_bluetooth"
-            app:fabSize="mini"
-            app:backgroundTint="@color/white"/>
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"

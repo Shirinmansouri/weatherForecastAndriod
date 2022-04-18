@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private String cityName;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private FloatingActionButton fabHistory,fabBluetooth;
+    //private FloatingActionButton fabHistory,fabBluetooth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
         backIv = findViewById(R.id.IdIvBack);
         iconeIv = findViewById(R.id.IdIvIcon);
         searchIv = findViewById(R.id.IdIvSearch);
-        fabBluetooth=findViewById(R.id.IdFabBluetooth);
-        fabHistory=findViewById(R.id.IdFabHistory);
+        //fabBluetooth=findViewById(R.id.IdFabBluetooth);
+        //fabHistory=findViewById(R.id.IdFabHistory);
         weatherRvModelArrayList = new ArrayList<>();
         weatherRvAdapter = new WeatherRvAdapter(this, weatherRvModelArrayList);
         weatherRv.setAdapter(weatherRvAdapter);
@@ -143,21 +143,21 @@ public class MainActivity extends AppCompatActivity {
           double latitude=location.getLatitude();
         cityName=getCityName(longitude,latitude);
         getWeatherInformation(cityName);
-            fabBluetooth.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "Bluetooth Clicked", Toast.LENGTH_SHORT).show();
-
-                }
-            });
-            fabHistory.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "History Clicked", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(MainActivity.this, SearchHistoryActivity.class);
-                    MainActivity.this.startActivity(myIntent);
-                }
-            });
+//            fabBluetooth.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(MainActivity.this, "Bluetooth Clicked", Toast.LENGTH_SHORT).show();
+//
+//                }
+//            });
+//            fabHistory.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(MainActivity.this, "History Clicked", Toast.LENGTH_SHORT).show();
+//                    Intent myIntent = new Intent(MainActivity.this, SearchHistoryActivity.class);
+//                    MainActivity.this.startActivity(myIntent);
+//                }
+//            });
          searchIv.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {

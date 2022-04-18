@@ -1,12 +1,16 @@
 package com.ms.forecastweather;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +28,38 @@ public class SearchHistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_history);
+
+        // Initialize the assign value
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.History);
+        // Perform Item selectionListener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.explore:
+                        startActivity(new Intent(getApplicationContext(), BluetoothActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.setting:
+                        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.History:
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+
         ListView lstHistory=(ListView) findViewById(R.id.lstHistory);
         paginator=new Paginator();
         nextBtn=(Button)findViewById(R.id.IdBtnNext);
@@ -44,7 +80,7 @@ public class SearchHistoryActivity extends AppCompatActivity {
                 }
 
                 Paginator.TOTAL_NUM_ITEM=lstWeather.size();
-                Paginator.ITEM_PER_PAGE=8;
+                Paginator.ITEM_PER_PAGE=7;
                 Paginator.LAST_PAGE=Paginator.TOTAL_NUM_ITEM/Paginator.ITEM_PER_PAGE;
                 Paginator.ITEM_REMAINING=Paginator.TOTAL_NUM_ITEM%Paginator.ITEM_PER_PAGE;
                 totalPages=Paginator.TOTAL_NUM_ITEM/Paginator.ITEM_PER_PAGE;
