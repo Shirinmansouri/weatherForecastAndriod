@@ -6,7 +6,7 @@
     <TextView
         android:id="@+id/IdTvSearchDate"
         android:layout_width="100dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="5sp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -47,6 +47,7 @@
         android:textSize="15dp"
 
         android:layout_toRightOf="@+id/IdTvSearchTime"/>
+
     <TextView
         android:id="@+id/IdTvSearchWindSpeed"
         android:layout_width="50dp"
@@ -54,10 +55,10 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="20sp"
         android:layout_marginBottom="2sp"
-        android:textStyle="bold"
-        android:textSize="10dp"
+        android:layout_toRightOf="@+id/IdTvSearchTemperature"
         android:textAlignment="center"
-        android:layout_toRightOf="@+id/IdTvSearchTemperature"/>
+        android:textSize="10dp"
+        android:textStyle="bold" />
 
 
 
