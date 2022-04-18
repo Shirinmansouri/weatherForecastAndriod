@@ -43,7 +43,7 @@ public class SearchHistoryActivity extends AppCompatActivity {
 
                 }
                 Paginator.TOTAL_NUM_ITEM=lstWeather.size();
-                Paginator.ITEM_PER_PAGE=5;
+                Paginator.ITEM_PER_PAGE=8;
                 Paginator.LAST_PAGE=Paginator.TOTAL_NUM_ITEM/Paginator.ITEM_PER_PAGE;
                 Paginator.ITEM_REMAINING=Paginator.TOTAL_NUM_ITEM%Paginator.ITEM_PER_PAGE;
                 totalPages=Paginator.TOTAL_NUM_ITEM/Paginator.ITEM_PER_PAGE;
