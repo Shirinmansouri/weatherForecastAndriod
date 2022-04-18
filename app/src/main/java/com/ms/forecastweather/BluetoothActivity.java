@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +23,15 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.ktx.Firebase;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -41,6 +50,7 @@ public class BluetoothActivity extends AppCompatActivity {
     BluetoothAdapter mBlueAdapter;
     ArrayAdapter businessesArrayAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +67,7 @@ public class BluetoothActivity extends AppCompatActivity {
 
         // Set Home Selected
         bottomNavigationView.setSelectedItemId(R.id.explore);
+
 
 
         // Perform Item selectionListener
@@ -124,6 +135,7 @@ public class BluetoothActivity extends AppCompatActivity {
         businessesList = findViewById(R.id.businessesList);
 
         ArrayList<String> businessesArrayList = new ArrayList<>();
+        ArrayList<String> businessesURL = new ArrayList<>();
 
         //                    ArrayAdapter businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
         businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
@@ -134,6 +146,14 @@ public class BluetoothActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, BusinessDetailsActivity.class);
 
+
+
+
+
+
+
+
+
         businessesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -141,9 +161,12 @@ public class BluetoothActivity extends AppCompatActivity {
 //                            intent.putExtra("mapType", mapType);
 //                            intent.putExtra("Location", restaurants.get(i) + "," + lonLats.get(i));
 //                businessesArrayAdapter.notifyDataSetChanged();
-                if (businessesArrayList.get(i).equals("2B:8C:1F:2A:0B:A9")){
-                    startActivity(intent);
-                }
+
+//                if (businessesArrayList.get(i).equals("2B:8C:1F:2A:0B:A9")){
+//                    startActivity(intent);
+//                }
+                intent.putExtra("url", businessesURL.get(i));
+                startActivity(intent);
 
             }
         });
@@ -213,7 +236,28 @@ public class BluetoothActivity extends AppCompatActivity {
                     // Each attributes of Bluetooth device can be call using device. (like: device.getName()).
                     for (BluetoothDevice device: devices){
 //                        mPairedTv.append("\nDevice" + device.getName() + "," + device.getAddress());
-                        businessesArrayList.add(device.getAddress());
+
+                        FirebaseFirestore.getInstance().collection("businesses").whereEqualTo("macaddress", device.getAddress())
+                                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()){
+                                    for (QueryDocumentSnapshot documentSnapshot: task.getResult()){
+                                        Log.d("Document", documentSnapshot.get("url").toString());
+                                        Toast.makeText(BluetoothActivity.this, "This is: " + documentSnapshot.get("name").toString(), Toast.LENGTH_LONG).show();
+                                        businessesArrayList.add(documentSnapshot.get("name").toString());
+                                        businessesURL.add(documentSnapshot.get("url").toString());
+                                    }
+                                }
+                                else {
+                                    Log.d("Document", "task was not Successful");
+                                    Toast.makeText(BluetoothActivity.this, "ndlasndklasndklasndklans", Toast.LENGTH_LONG).show();
+                                }
+                                businessesArrayAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
                     }
                     businessesArrayAdapter.notifyDataSetChanged();
                 }
