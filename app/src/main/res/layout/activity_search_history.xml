@@ -17,7 +17,7 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="    Date                City                Time   Temperature Wind"
+    android:text="    Date                City         Time   Temperature  Wind"
     android:textStyle="bold"
     android:textColor="@color/black"
     >
