@@ -48,9 +48,9 @@ public class ListViewAdapter extends ArrayAdapter<WeatherModel> {
         TextView tvWind=(TextView) convertView.findViewById(R.id.IdTvSearchWindSpeed);
         tvCity.setText(cityName);
         DateFormat _date = new SimpleDateFormat("MM/dd/yy");
-        String strDate = _date. format(Date.parse(searchDate));
+        String strDate = _date.format(Date.parse(searchDate));
         tvDate.setText(strDate);
-        tvTime.setText(searchTime.substring(11,16));
+        tvTime.setText(searchTime.substring(11, 16));
         tvTemperature.setText(searchTemperature);
         tvWind.setText(searchWindSpeed);
         return  convertView;

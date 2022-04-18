@@ -42,6 +42,7 @@ public class SearchHistoryActivity extends AppCompatActivity {
                   //  lstWeather.add(postSnapshot.getValue(WeatherModel.class));
 
                 }
+
                 Paginator.TOTAL_NUM_ITEM=lstWeather.size();
                 Paginator.ITEM_PER_PAGE=8;
                 Paginator.LAST_PAGE=Paginator.TOTAL_NUM_ITEM/Paginator.ITEM_PER_PAGE;
