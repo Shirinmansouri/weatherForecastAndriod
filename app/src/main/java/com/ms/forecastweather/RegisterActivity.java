@@ -56,19 +56,18 @@ public class RegisterActivity extends AppCompatActivity {
                 else {
                     registerUser(txt_email, txt_password);
                 }
-
-//                startActivity(new Intent(RegisterActivity.this, SettingsActivity.class));
-                //In order to stop user to use back button to come back to this screen we use finish()
-                finish();
             }
         });
     }
 
     public void registerUser(String email, String password) {
+
+
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()){
+                if (task.isSuccessful()){
+
                     Toast.makeText(RegisterActivity.this, "Registering User Successfully", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     finish();
