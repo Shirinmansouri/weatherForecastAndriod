@@ -55,17 +55,17 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-        goToHomeScreen = findViewById(R.id.gotohomescreen);
+//        goToHomeScreen = findViewById(R.id.gotohomescreen);
 
-        goToHomeScreen.setOnClickListener(new View.OnClickListener() {
-            //Implement the event handler method
-            public void onClick(View v) {
-                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
-
-                //In order to stop user to use back button to come back to this screen we use finish()
-                finish();
-            }
-        });
+//        goToHomeScreen.setOnClickListener(new View.OnClickListener() {
+//            //Implement the event handler method
+//            public void onClick(View v) {
+//                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+//
+//                //In order to stop user to use back button to come back to this screen we use finish()
+//                finish();
+//            }
+//        });
 
         signOut = findViewById(R.id.signOut);
 

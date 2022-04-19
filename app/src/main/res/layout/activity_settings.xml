@@ -6,19 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Go To Home Screen"
-        android:id="@+id/gotohomescreen" />
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:text="Go To Home Screen"-->
+<!--        android:id="@+id/gotohomescreen" />-->
+
+    <ImageView
+        android:id="@+id/ImageViewLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginLeft="50dp"
+        android:layout_margin="2px"
+        android:src="@drawable/mainlogo"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="220dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us : "
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group 5 for Adv. Android Course"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="300dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About App : "
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This application aims to provide tourists with an upportunity to find out about the weather of their current location and also find the nearest businesses to them to order from there"
+            android:textSize="15dp" />
+    </LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Out"
         android:id="@+id/signOut"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        app:cornerRadius="15dp"
+        android:textSize="20dp"
+        android:layout_marginTop="500dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
