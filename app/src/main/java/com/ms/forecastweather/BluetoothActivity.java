@@ -50,7 +50,6 @@ public class BluetoothActivity extends AppCompatActivity {
     BluetoothAdapter mBlueAdapter;
     ArrayAdapter businessesArrayAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +66,6 @@ public class BluetoothActivity extends AppCompatActivity {
 
         // Set Home Selected
         bottomNavigationView.setSelectedItemId(R.id.explore);
-
-
 
         // Perform Item selectionListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -90,7 +87,6 @@ public class BluetoothActivity extends AppCompatActivity {
             }
         });
 
-        // Change Bluetooth On/Off Status
         bluetoothStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -111,7 +107,6 @@ public class BluetoothActivity extends AppCompatActivity {
                         mBlueAdapter.disable();
                         showToast("Turning Bluetooth Off");
                         bluetoothStatusText.setText("Bluetooth is Off");
-//                    mBlueTv.setImageResource(R.drawable.ic_action_off);
                     } else {
                         showToast("Bluetooth is already off");
                         bluetoothStatusText.setText("Bluetooth is Off");
@@ -120,13 +115,6 @@ public class BluetoothActivity extends AppCompatActivity {
             }
         });
 
-
-//        mStatusBlueTv = findViewById(R.id.statusBluetoothTV);
-//        mPairedTv = findViewById(R.id.pairedTv);
-//        mBlueTv = findViewById(R.id.bluetoothTV);
-//        mOnBtn = findViewById(R.id.onBtn);
-//        mOffBtn = findViewById(R.id.offBtn);
-//        mDiscoveredBtn = findViewById(R.id.discoverableBtn);
         mPairedBtn = findViewById(R.id.pairedBtn);
 
         // adapter
@@ -137,7 +125,6 @@ public class BluetoothActivity extends AppCompatActivity {
         ArrayList<String> businessesArrayList = new ArrayList<>();
         ArrayList<String> businessesURL = new ArrayList<>();
 
-        //                    ArrayAdapter businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
         businessesArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, businessesArrayList);
 
         businessesArrayAdapter.notifyDataSetChanged();
@@ -146,97 +133,24 @@ public class BluetoothActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, BusinessDetailsActivity.class);
 
-
-
-
-
-
-
-
-
         businessesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                            intent.putExtra("mapType", mapType);
-//                            intent.putExtra("Location", restaurants.get(i) + "," + lonLats.get(i));
-//                businessesArrayAdapter.notifyDataSetChanged();
-
-//                if (businessesArrayList.get(i).equals("2B:8C:1F:2A:0B:A9")){
-//                    startActivity(intent);
-//                }
                 intent.putExtra("url", businessesURL.get(i));
                 startActivity(intent);
 
             }
         });
 
-
-//        // check if bluetooth is available
-//        if (mBlueAdapter == null){
-//            mStatusBlueTv.setText("Bluetooth is not available");
-//        } else {
-//            mStatusBlueTv.setText("Bluetooth is available");
-//        }
-
-        // set image according to the bluetooth status(on/off)
-//        if (mBlueAdapter.isEnabled()){
-//            mBlueTv.setImageResource(R.drawable.ic_action_on);
-//        }
-//        else {
-//            mBlueTv.setImageResource(R.drawable.ic_action_off);
-//        }
-
-//        // on btn click
-//        mOnBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (!mBlueAdapter.isEnabled()){
-//                     showToast("Turing On Bluetooth...");
-//                     // intent to on Bluetooth
-//                    Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//                    startActivityForResult(intent, REQUEST_ENABLE_BT);
-//                }
-//                else {
-//                    showToast("Bluetooth is already on");
-//                }
-//            }
-//        });
-//        // Discover bluetooth btn
-//        mDiscoveredBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (!mBlueAdapter.isDiscovering()){
-//                    showToast("Making your device discoverable");
-//                    Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-//                    startActivityForResult(intent, REQUEST_ENABLE_BT);
-//                }
-//            }
-//        });
-//        // off btn click
-//        mOffBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (mBlueAdapter.isEnabled()){
-//                    mBlueAdapter.disable();
-//                    showToast("Turning Bluetooth Off");
-////                    mBlueTv.setImageResource(R.drawable.ic_action_off);
-//                } else {
-//                    showToast("Bluetooth is already off");
-//                }
-//            }
-//        });
-        // get paired devices btn click
+        // Find the nearest businesses
         mPairedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mBlueAdapter.isEnabled()){
-//                    mPairedTv.setText("Paired Devices");
                     Set<BluetoothDevice> devices = mBlueAdapter.getBondedDevices();
                     // Each attributes of Bluetooth device can be call using device. (like: device.getName()).
                     for (BluetoothDevice device: devices){
-//                        mPairedTv.append("\nDevice" + device.getName() + "," + device.getAddress());
-
                         FirebaseFirestore.getInstance().collection("businesses").whereEqualTo("macaddress", device.getAddress())
                                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
@@ -244,7 +158,6 @@ public class BluetoothActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     for (QueryDocumentSnapshot documentSnapshot: task.getResult()){
                                         Log.d("Document", documentSnapshot.get("url").toString());
-//                                        Toast.makeText(BluetoothActivity.this, "This is: " + documentSnapshot.get("name").toString(), Toast.LENGTH_LONG).show();
                                         businessesArrayList.add(documentSnapshot.get("name").toString());
                                         businessesURL.add(documentSnapshot.get("url").toString());
                                     }
@@ -256,8 +169,6 @@ public class BluetoothActivity extends AppCompatActivity {
                                 businessesArrayAdapter.notifyDataSetChanged();
                             }
                         });
-
-
                     }
                     businessesArrayAdapter.notifyDataSetChanged();
                 }
@@ -275,7 +186,6 @@ public class BluetoothActivity extends AppCompatActivity {
             case REQUEST_ENABLE_BT:
                 if (resultCode == RESULT_OK){
                     // bluetooth is one
-//                    mBlueTv.setImageResource(R.drawable.ic_action_on);
                     showToast("Bluetooth is on");
                 } else {
                     // under denied to turn bluetooth on
