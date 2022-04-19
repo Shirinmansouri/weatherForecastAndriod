@@ -6,18 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".UserAuthenticationActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/register"
-        android:layout_marginTop="100dp"/>
+    <ImageView
+        android:id="@+id/ImageViewLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginLeft="100dp"
+        android:layout_margin="2px"
+        android:src="@drawable/mainlogo"
+        />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:cornerRadius="15dp"
+        android:text="Register"
+        android:textSize="20dp"
+        android:id="@+id/register"
+        android:layout_marginTop="320dp"/>
+
+    <Button
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:cornerRadius="15dp"
+        android:textSize="20dp"
         android:text="Login"
         android:id="@+id/login"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="480dp"/>
 
 </RelativeLayout>

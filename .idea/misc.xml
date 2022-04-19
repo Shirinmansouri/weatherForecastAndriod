@@ -5,12 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable-anydpi/ic_action_off.xml" value="0.2537037037037037" />
         <entry key="app/src/main/res/drawable/car_back.xml" value="0.14375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_find_nearest_businesses.xml" value="0.140625" />
         <entry key="app/src/main/res/layout/activity_bluetooth.xml" value="0.17753623188405798" />
         <entry key="app/src/main/res/layout/activity_business_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.11930091185410334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.11930091185410334" />
         <entry key="app/src/main/res/layout/activity_search_history.xml" value="0.17753623188405798" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_user_authentication.xml" value="0.11930091185410334" />
         <entry key="app/src/main/res/layout/history_report.xml" value="0.17753623188405798" />
+        <entry key="app/src/main/res/layout/ic_baseline_find_nearest_businesses.xml" value="0.10326086956521739" />
         <entry key="app/src/main/res/layout/weather_rv_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_navigation.xml" value="0.25" />
       </map>

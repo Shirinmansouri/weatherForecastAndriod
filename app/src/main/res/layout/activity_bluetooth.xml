@@ -7,125 +7,127 @@
     tools:context=".BluetoothActivity">
 
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        >-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:gravity="center_horizontal"-->
+    <!--        >-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
 
 
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:id="@+id/switchBluetooth" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:id="@+id/switchBluetooth" />
 
-            <TextView
-                android:id="@+id/bluetoothStatus"
-                android:text="Bluetooth Status"
-                android:layout_width="160dp"
-                android:textSize="20dp"
-                android:layout_height="wrap_content"
-                />
+        <TextView
+            android:id="@+id/bluetoothStatus"
+            android:text="Bluetooth Status"
+            android:layout_width="160dp"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            />
 
 
-        </LinearLayout>
+    </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical"-->
-<!--            android:gravity="center_horizontal"-->
-<!--            >-->
-            <!-- Get list of paired devices button -->
-            <Button
-                android:id="@+id/pairedBtn"
-                android:minWidth="200dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="100dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Get Paired Devices"
-                style="@style/Base.CardView"
-                />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            >-->
+    <!-- Get list of paired devices button -->
+    <Button
+        android:id="@+id/pairedBtn"
+        android:minWidth="200dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find nearest businesses"
+        android:drawableTop="@drawable/ic_baseline_find_nearest_businesses"
+        style="@style/Base.CardView"
+        />
 
-<!--&lt;!&ndash; Show paired devices here &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:id="@+id/pairedTv"-->
-<!--                android:minWidth="200dp"-->
-<!--                android:text=""-->
-<!--                android:layout_marginTop="120dp"-->
-<!--                android:textColor="#000"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                />-->
+    <!--&lt;!&ndash; Show paired devices here &ndash;&gt;-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/pairedTv"-->
+    <!--                android:minWidth="200dp"-->
+    <!--                android:text=""-->
+    <!--                android:layout_marginTop="120dp"-->
+    <!--                android:textColor="#000"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                />-->
 
     <ListView
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="170dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/businessesList"/>
-<!--        </LinearLayout>-->
+    <!--        </LinearLayout>-->
 
 
-        <!--        &lt;!&ndash; Display whether bluetooth is available or not &ndash;&gt;-->
-<!--        <TextView-->
-<!--            android:id="@+id/statusBluetoothTV"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text=""-->
-<!--            android:textAlignment="center"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textColor="#000"-->
-<!--            />-->
+    <!--        &lt;!&ndash; Display whether bluetooth is available or not &ndash;&gt;-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/statusBluetoothTV"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text=""-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:textColor="#000"-->
+    <!--            />-->
 
-<!--        &lt;!&ndash; Bluetooth icon on/off &ndash;&gt;-->
-<!--        <ImageView-->
-<!--            android:id="@+id/bluetoothTV"-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="200dp" />-->
+    <!--        &lt;!&ndash; Bluetooth icon on/off &ndash;&gt;-->
+    <!--        <ImageView-->
+    <!--            android:id="@+id/bluetoothTV"-->
+    <!--            android:layout_width="200dp"-->
+    <!--            android:layout_height="200dp" />-->
 
-<!--        &lt;!&ndash; On Button &ndash;&gt;-->
-<!--        <Button-->
-<!--            android:id="@+id/onBtn"-->
-<!--            android:minWidth="200dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Turn On"-->
-<!--            style="@style/Base.CardView"-->
-<!--            />-->
+    <!--        &lt;!&ndash; On Button &ndash;&gt;-->
+    <!--        <Button-->
+    <!--            android:id="@+id/onBtn"-->
+    <!--            android:minWidth="200dp"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Turn On"-->
+    <!--            style="@style/Base.CardView"-->
+    <!--            />-->
 
-<!--        &lt;!&ndash; Off Button &ndash;&gt;-->
-<!--        <Button-->
-<!--            android:id="@+id/offBtn"-->
-<!--            android:minWidth="200dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Turn Off"-->
-<!--            style="@style/Base.CardView"-->
-<!--            />-->
+    <!--        &lt;!&ndash; Off Button &ndash;&gt;-->
+    <!--        <Button-->
+    <!--            android:id="@+id/offBtn"-->
+    <!--            android:minWidth="200dp"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Turn Off"-->
+    <!--            style="@style/Base.CardView"-->
+    <!--            />-->
 
-<!--        &lt;!&ndash; Discoverable Button &ndash;&gt;-->
-<!--        <Button-->
-<!--            android:id="@+id/discoverableBtn"-->
-<!--            android:minWidth="200dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Discoverable"-->
-<!--            style="@style/Base.CardView"-->
-<!--            />-->
-
-
+    <!--        &lt;!&ndash; Discoverable Button &ndash;&gt;-->
+    <!--        <Button-->
+    <!--            android:id="@+id/discoverableBtn"-->
+    <!--            android:minWidth="200dp"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Discoverable"-->
+    <!--            style="@style/Base.CardView"-->
+    <!--            />-->
 
 
 
-<!--    </LinearLayout>-->
+
+
+    <!--    </LinearLayout>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

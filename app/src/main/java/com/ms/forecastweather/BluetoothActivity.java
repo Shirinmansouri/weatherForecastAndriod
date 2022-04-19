@@ -85,10 +85,6 @@ public class BluetoothActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.History:
-                        startActivity(new Intent(getApplicationContext(), SearchHistoryActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
                 }
                 return false;
             }
@@ -248,14 +244,14 @@ public class BluetoothActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     for (QueryDocumentSnapshot documentSnapshot: task.getResult()){
                                         Log.d("Document", documentSnapshot.get("url").toString());
-                                        Toast.makeText(BluetoothActivity.this, "This is: " + documentSnapshot.get("name").toString(), Toast.LENGTH_LONG).show();
+//                                        Toast.makeText(BluetoothActivity.this, "This is: " + documentSnapshot.get("name").toString(), Toast.LENGTH_LONG).show();
                                         businessesArrayList.add(documentSnapshot.get("name").toString());
                                         businessesURL.add(documentSnapshot.get("url").toString());
                                     }
                                 }
                                 else {
                                     Log.d("Document", "task was not Successful");
-                                    Toast.makeText(BluetoothActivity.this, "ndlasndklasndklasndklans", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(BluetoothActivity.this, "Couldn't succeed to read data from server", Toast.LENGTH_LONG).show();
                                 }
                                 businessesArrayAdapter.notifyDataSetChanged();
                             }
