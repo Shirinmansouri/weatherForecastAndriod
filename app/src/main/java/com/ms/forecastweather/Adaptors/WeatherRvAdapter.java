@@ -1,4 +1,4 @@
-package com.ms.forecastweather;
+package com.ms.forecastweather.Adaptors;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ms.forecastweather.R;
+import com.ms.forecastweather.Models.WeatherRvModel;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;

@@ -1,4 +1,4 @@
-package com.ms.forecastweather;
+package com.ms.forecastweather.Adaptors;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,11 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.ms.forecastweather.R;
+import com.ms.forecastweather.Models.WeatherModel;
+
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListViewAdapter extends ArrayAdapter<WeatherModel> {
     private static final String TAG="PersonListAdapter";

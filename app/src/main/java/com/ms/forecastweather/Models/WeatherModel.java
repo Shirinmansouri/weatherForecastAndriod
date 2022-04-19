@@ -1,4 +1,4 @@
-package com.ms.forecastweather;
+package com.ms.forecastweather.Models;
 
 import java.util.UUID;
 

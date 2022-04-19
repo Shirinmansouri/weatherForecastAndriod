@@ -1,5 +1,7 @@
 package com.ms.forecastweather;
 
+import com.ms.forecastweather.Models.WeatherModel;
+
 import java.util.ArrayList;
 
 public class Paginator {

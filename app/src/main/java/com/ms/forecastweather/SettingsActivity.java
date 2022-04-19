@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.ms.forecastweather.UserAuthentication.UserAuthenticationActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 

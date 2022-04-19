@@ -31,10 +31,10 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".UserAuthentication.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".UserAuthentication.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -46,7 +46,7 @@
             android:name=".BluetoothActivity"
             android:exported="true" />
         <activity
-            android:name=".UserAuthenticationActivity"
+            android:name=".UserAuthentication.UserAuthenticationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

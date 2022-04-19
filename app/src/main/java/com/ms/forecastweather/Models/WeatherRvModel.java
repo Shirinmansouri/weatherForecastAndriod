@@ -1,4 +1,4 @@
-package com.ms.forecastweather;
+package com.ms.forecastweather.Models;
 
 public class WeatherRvModel {
     private String time;
