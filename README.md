@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/25262431/166340174-cc97ff40-78c3-4725-
 Tourism guidance applications are developed with next-generation technologies that offer guidance based on weather condition and nearest restaurants based on location.
 
 # Content
-This code is implemented and fully tested on a Samsung Galaxy A8 2018.
+This code was implemented and fully tested on a Samsung Galaxy A8 2018.
 
 # How it's written
 The front-end was implemented using Java. The User Authentication and Cloud Stroge was developed using Google Firebase.
